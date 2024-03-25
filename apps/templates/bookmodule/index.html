@@ -4,7 +4,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width">
       <title>
-         Lab6 {% block title %}{% endblock %}
+         My web page {% block title %}{% endblock %}
       </title>
      
     <body>
@@ -14,7 +14,19 @@
 
 <p>Date: <input type="datetime-local" name="datetime" id="datetime" /></p>
 <label for="birthdaytime">Determine: </label>
-<input type="datetime-local" id="birthdaytime" name="birthdaytime">
+<input type="datetime-local" id="birthdaytime" name="birthdaytime"> <br><br><br>
+<hr><br>
+
+<select name="selectedgenre">
+   <option selected>None</option>
+  <option value="fiction">Fiction</option>
+  <option value="n-fiction">Non-fiction</option>
+  <option value="novel">Novel</option>
+   </select> <br> <br>
+   <hr><br>
+
+   <textarea name="description" rows="10" cols="30"></textarea>
+
 
    </body>
 </html>
