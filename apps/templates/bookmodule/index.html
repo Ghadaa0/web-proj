@@ -1,33 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-   <head>
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width">
-      <title>
-         My web page {% block title %}{% endblock %}
-      </title>
-     
-    <body>
-<h1>New HTML5 input types demo</h1>
-<p>this demo the new HTML5 input types: </p><br><br>
-<p>Color: <input type="color" name="color" id="color" /> </p>
+{% extends "layouts/base.html" %}
 
-<p>Date: <input type="datetime-local" name="datetime" id="datetime" /></p>
-<label for="birthdaytime">Determine: </label>
-<input type="datetime-local" id="birthdaytime" name="birthdaytime"> <br><br><br>
-<hr><br>
+{% block stylesheets %}
 
-<select name="selectedgenre">
-   <option selected>None</option>
-  <option value="fiction">Fiction</option>
-  <option value="n-fiction">Non-fiction</option>
-  <option value="novel">Novel</option>
-   </select> <br> <br>
-   <hr><br>
+<style>
+    table, th, td {
+        border: 1px solid green;
+        border-collapse: collapse;
+    }
+</style>
 
-   <textarea name="description" rows="10" cols="30"></textarea>
+{% endblock stylesheets %}
 
+{% block content %}
 
-   </body>
-</html>
-
+{% endblock content %}
