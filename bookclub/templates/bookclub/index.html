@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <header>
+        <br><br>
+        <h1>Welome to The Virtual Book Club.</h1>
+        <br><br><br><br>
+       
+    </header>
+
+    <main>
+        <section>
+            <h2><i>About the club.</i></h2>
+            <h3>Welcome to the virtual book club, where reading comes to life! <br>
+            At the book club, we believe in the power of brevity. We provide concise book recommendations to help you discover your next read in a flash. <br>
+            Join us and explore a world of literature, one brief description at a time.</h3>
+            <br><br><hr>
+        </section>
+        <section>
+        <hr class="section-divider">
+    </section>
+        <section>
+            
+            <h2><i>All Books</i></h2>
+            <div class="card-deck">
+                {% for book in books %}
+                <div class="card">
+                    <img class="card-img-top" src="{{ book.image.url }}" alt="{{ book.title }}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ book.title }}</h5>
+                        <p class="card-text">Author: {{ book.author }}</p>
+                        <p class="card-text">{{ book.description }}</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="{% url 'edit_book' book.id %}" class="btn btn-primary">Edit</a>
+                        <a href="{% url 'delete_book' book.id %}" class="btn btn-danger">Delete</a>
+                    </div>
+                </div>
+                {% empty %}
+                <p>No books available.</p>
+                {% endfor %}
+            </div>
+        </section>
+
+        <section>
+            <h3>Keep the fun of reading!</h3>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Virtual Book Club. </p>
+    </footer>
+
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'bookclub/styles.css' %}">
+{% endblock %}

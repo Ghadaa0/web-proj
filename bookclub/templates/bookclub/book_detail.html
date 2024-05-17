@@ -1,0 +1,12 @@
+<h1>Book Details</h1>
+
+<img src="{{ book.image.url }}" alt="{{ book.title }}">
+
+<h2>{{ book.title }}</h2>
+<p>Author: {{ book.author }}</p>
+<p>Description: {{ book.description }}</p>
+
+<a href="{% url 'book_list' %}">Back to Books List</a>
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'bookclub/styles.css' %}">

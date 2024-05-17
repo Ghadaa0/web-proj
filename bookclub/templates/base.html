@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book Club.
+    </title>
+    {% load static %}
+
+    <link rel="stylesheet" type="text/css" href="{% static 'bookclub/styles.css' %}">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="{% url 'book_search' %}">Search</a></li>
+            <li><a href="{% url 'add_book' %}">Add Book</a></li>
+        </ul>
+    </nav>
+
+    {% block content %}{% endblock %}
+
+</body>
+</html>
