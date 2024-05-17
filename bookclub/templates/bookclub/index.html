@@ -2,53 +2,49 @@
 
 {% block content %}
     <header>
-        <br><br>
-        <h1>Welome to The Virtual Book Club.</h1>
-        <br><br><br><br>
-       
+        <h1>مرحبًا بك في نادي القراء الافتراضي</h1>
+        <nav>
+            <ul>
+                <li><a href="#">الصفحة الرئيسية</a></li>
+                <li><a href="#">عن النادي</a></li>
+                <li><a href="#">تواصل معنا</a></li>
+            </ul>
+        </nav>
     </header>
 
     <main>
         <section>
-            <h2><i>About the club.</i></h2>
-            <h3>Welcome to the virtual book club, where reading comes to life! <br>
-            At the book club, we believe in the power of brevity. We provide concise book recommendations to help you discover your next read in a flash. <br>
-            Join us and explore a world of literature, one brief description at a time.</h3>
-            <br><br><hr>
-        </section>
-        <section>
-        <hr class="section-divider">
-    </section>
-        <section>
-            
-            <h2><i>All Books</i></h2>
-            <div class="card-deck">
-                {% for book in books %}
-                <div class="card">
-                    <img class="card-img-top" src="{{ book.image.url }}" alt="{{ book.title }}">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ book.title }}</h5>
-                        <p class="card-text">Author: {{ book.author }}</p>
-                        <p class="card-text">{{ book.description }}</p>
-                    </div>
-                    <div class="card-footer">
-                        <a href="{% url 'edit_book' book.id %}" class="btn btn-primary">Edit</a>
-                        <a href="{% url 'delete_book' book.id %}" class="btn btn-danger">Delete</a>
-                    </div>
-                </div>
-                {% empty %}
-                <p>No books available.</p>
-                {% endfor %}
-            </div>
+            <h2>عن النادي</h2>
+            <h4> نادي القراء الافتراضي: يستعرض أبرز الكتب من اختيار القراء </h4>
+            <p> يتيح النادي لك الإطلاع على الكتب وتفاصيلها , التعديل عليها , وأن كانت غير مناسبة حذفها</p>
         </section>
 
         <section>
-            <h3>Keep the fun of reading!</h3>
+            <h2>All Books</h2>
+        <ul>
+            {% for book in books %}
+            <li>
+                <img src="{{ book.image.url }}" alt="{{ book.title }}">
+                <h3>{{ book.title }}</h3>
+                <p>Author: {{ book.author }}</p>
+                <p>Description: {{ book.description }}</p>
+                <a href="{% url 'edit_book' book.id %}">Edit</a>
+                <a href="{% url 'delete_book' book.id %}">Delete</a>
+            </li>
+            {% empty %}
+            <li>No books available.</li>
+            {% endfor %}
+        </ul>
+        </section>
+
+        <section>
+            <h2>P</h2>
+            <!-- Add popular genres or categories here -->
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2024 Virtual Book Club. </p>
+        <p>&copy; 2024 virtual book club. </p>
     </footer>
 
     {% load static %}

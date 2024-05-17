@@ -1,15 +1,12 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>Add a new book</h1>
+    <h1>اضافة كتاب</h1>
 
     <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit">Add</button>
+        <button type="submit">اضف</button>
     </form>
-    <a href="{% url 'book_list' %}">Back to Books List</a>
+    <a href="{% url 'book_list' %}">العودة إلى قائمة الكتب</a>
 {% endblock %}
-{% load static %}
-
-<link rel="stylesheet" type="text/css" href="{% static 'bookclub/styles.css' %}">

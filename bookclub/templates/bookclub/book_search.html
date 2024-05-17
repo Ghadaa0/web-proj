@@ -1,24 +1,23 @@
 {% extends 'base.html' %}
 {% load static %}
 
-<link rel="stylesheet" type="text/css" href="{% static 'bookclub/styles.css' %}">
 {% block content %}
 
-    <h1>Search about a book:</h1>
+    <h1>للبحث عن كتاب</h1>
     <form action="{% url 'book_search' %}" method="GET">
-        <input type="text" name="q" placeholder="book name...">
-        <button type="submit">Search</button>
+        <input type="text" name="q" placeholder="Search books...">
+        <button type="submit">بحث</button>
     </form>
     {% if query %}
-    <p>Result "{{ query }}":</p>
+    <p>نتائج البحث "{{ query }}":</p>
     {% endif %}
     <ul>
         {% for book in books %}
         <li><a href="{% url 'book_detail' book.id %}">{{ book.title }}</a></li>
         {% empty %}
-        <li>No books available.</li>
+        <li>الكتاب غير موجود</li>
         {% endfor %}
     </ul>
-    <a href="{% url 'book_list' %}">Back to books list</a>
+    <a href="{% url 'book_list' %}">العودة إلى قائمة الكتب</a>
 
 {% endblock content %}

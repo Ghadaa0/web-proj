@@ -1,17 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Book Club.
-    </title>
-    {% load static %}
-
-    <link rel="stylesheet" type="text/css" href="{% static 'bookclub/styles.css' %}">
+    <title>نادي القراء</title>
 </head>
 <body>
     <nav>
         <ul>
-            <li><a href="{% url 'book_search' %}">Search</a></li>
-            <li><a href="{% url 'add_book' %}">Add Book</a></li>
+            <li><a href="{% url 'book_search' %}">للبحث عن كتاب</a></li>
+            <li><a href="{% url 'add_book' %}">لإضافة كتاب</a></li>
         </ul>
     </nav>
 

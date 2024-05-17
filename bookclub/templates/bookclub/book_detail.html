@@ -1,12 +1,9 @@
-<h1>Book Details</h1>
+<h1>تفاصيل الكتاب</h1>
 
 <img src="{{ book.image.url }}" alt="{{ book.title }}">
 
 <h2>{{ book.title }}</h2>
-<p>Author: {{ book.author }}</p>
-<p>Description: {{ book.description }}</p>
+<p>الكاتب: {{ book.author }}</p>
+<p>وصف الكتاب: {{ book.description }}</p>
 
-<a href="{% url 'book_list' %}">Back to Books List</a>
-{% load static %}
-
-<link rel="stylesheet" type="text/css" href="{% static 'bookclub/styles.css' %}">
+<a href="{% url 'book_list' %}">العودة إلى قائمة الكتب</a>
